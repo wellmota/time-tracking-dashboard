@@ -1,0 +1,24 @@
+# Node.js
+node_modules/
+
+# arquivos de compilação
+build/
+dist/
+
+# dependências de desenvolvimento
+.cache/
+coverage/
+*.log
+*.log*
+*.test.js
+*.spec.js
+*.snap
+*.zip
+*.rar
+*.tar.gz
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
