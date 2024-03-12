@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      borderRadius: {
+        lg: "0.9rem",
+      },
       colors: {
         transparent: "transparent",
         current: "currentColor",
@@ -22,6 +25,7 @@ module.exports = {
         neutralDarkBlue: "hsl(235, 46%, 20%)",
         neutralDesaturatedBlue: "hsl(235, 45%, 61%)",
         neutralPaleBlue: "hsl(236, 100%, 87%)",
+        red: '#D20000',
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
