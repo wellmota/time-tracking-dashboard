@@ -7,6 +7,22 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        transparent: "transparent",
+        current: "currentColor",
+        white: "#ffffff",
+        blue: "hsl(246, 80%, 60%)",
+        workRed: "hsl(15, 100%, 70%)",
+        playBlue: "hsl(195, 74%, 62%)",
+        studyRed: "hsl(348, 100%, 68%)",
+        exerciseGreen: "hsl(145, 58%, 55%)",
+        socialViolet: "hsl(264, 64%, 52%)",
+        selfCareOrange: "hsl(43, 84%, 65%)",
+        neutralVeryDarkBlue: "hsl(226, 43%, 10%)",
+        neutralDarkBlue: "hsl(235, 46%, 20%)",
+        neutralDesaturatedBlue: "hsl(235, 45%, 61%)",
+        neutralPaleBlue: "hsl(236, 100%, 87%)",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
