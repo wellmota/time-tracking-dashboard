@@ -1,18 +1,21 @@
-import { ProfileCard } from "./components/ProfileCard";
-import { Container } from "./components/Container";
-import { Card } from "./components/Card";
+import { Container } from "./layout/Container";
+import { Colum } from "./layout/Colum";
+import { ProfileCard } from "./components/cards/ProfileCard";
+import { TimeTrackCard } from "./components/cards/TimeTrackCard";
+
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <Container>
-        <ProfileCard></ProfileCard>
-        <div className="flex flex-row flex-wrap gap-8">
-          <Card></Card>
-          <Card></Card>
-          <Card></Card>
-          <Card></Card>
-          <Card></Card>
-        </div>
+        <ProfileCard />
+        <Colum>
+          <TimeTrackCard />
+          <TimeTrackCard />
+          <TimeTrackCard />
+          <TimeTrackCard />
+          <TimeTrackCard />
+          <TimeTrackCard />
+        </Colum>
       </Container>
     </main>
   );
