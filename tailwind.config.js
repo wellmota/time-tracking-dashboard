@@ -16,7 +16,7 @@ module.exports = {
         white: "#ffffff",
         blue: "hsl(246, 80%, 60%)",
         work: "hsl(15, 100%, 70%)",
-        study: "var(--studyRed)",
+        study: "hsl(348, 100%, 68%)",
         play: "var(--playBlue)",
         exercise: "var(--exerciseGreen)",
         social: "var(--socialViolet)",
@@ -25,6 +25,7 @@ module.exports = {
         neutralDarkBlue: "var(--neutralDarkBlue)",
         neutralDesaturatedBlue: "var(--neutralDesaturatedBlue)",
         neutralPaleBlue: "var(--neutralPaleBlue)",
+        mediumDesaturatedBlue: "var(--mediumDesaturatedBlue)",
         red: "#D20000",
       },
       backgroundImage: {
@@ -35,6 +36,7 @@ module.exports = {
     },
   },
   plugins: [],
+
   safelist: [
     "bg-study",
     "bg-exercise",
@@ -42,5 +44,6 @@ module.exports = {
     "bg-social",
     "bg-selfCare",
     "bg-work",
+    ":root",
   ],
 };
