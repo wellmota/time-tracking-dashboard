@@ -6,6 +6,15 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --playBlue: hsl(195, 74%, 62%);
+  --studyRed: hsl(348, 100%, 68%);
+  --exerciseGreen: hsl(145, 58%, 55%);
+  --socialViolet: hsl(264, 64%, 52%);
+  --selfCareOrange: hsl(43, 84%, 65%);
+  --neutralVeryDarkBlue: hsl(226, 43%, 10%);
+  --neutralDarkBlue: hsl(235, 46%, 20%);
+  --neutralPaleBlue: hsl(236, 100%, 87%);
+  --neutralDesaturatedBlue: hsl(235, 45%, 61%);
 }
 
 @layer base {

@@ -9,12 +9,12 @@ export default function Home() {
       <Container>
         <ProfileCard />
         <Colum>
-          <TimeTrackCard />
-          <TimeTrackCard />
-          <TimeTrackCard />
-          <TimeTrackCard />
-          <TimeTrackCard />
-          <TimeTrackCard />
+          <TimeTrackCard category="study" />
+          <TimeTrackCard category="work" />
+          <TimeTrackCard category="exercise" />
+          <TimeTrackCard category="selfCare" />
+          <TimeTrackCard category="play" />
+          <TimeTrackCard category="study" />
         </Colum>
       </Container>
     </main>
