@@ -1,3 +1,4 @@
+
 export default function CardBase({ children, category }) {
   const bgGradient = category
     ? `bg-gradient-to-t from-slate-950  via-slate-950 via-10%  via-slate-950 to-10%`

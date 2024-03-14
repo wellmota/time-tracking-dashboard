@@ -46,3 +46,12 @@ export const Small = {
     label: 'Button',
   },
 };
+
+
+export const Warning = {
+  args: {
+    primary: true,
+    label: "Delete now",
+    backgroundColor: "red",
+  },
+};

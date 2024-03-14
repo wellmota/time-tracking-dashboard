@@ -1,7 +1,7 @@
-import ProfilePic from "../../images/image-jeremy.png";
-import Avatar from "../imagery/Avatar";
+import ProfilePic from "../../../images/image-jeremy.png";
+import Avatar from "../../imagery/Avatar";
 
-import SortFilter from "../navigation/SortFilter";
+import SortFilter from "../../navigation/SortFilter";
 
 export function ProfileCard() {
   return (
