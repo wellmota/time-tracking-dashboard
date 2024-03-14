@@ -2,6 +2,7 @@ import { Container } from "./layout/Container";
 import { Colum } from "./layout/Colum";
 import { ProfileCard } from "./components/cards/ProfileCard";
 import { TimeTrackCard } from "./components/cards/TimeTrackCard";
+import Image from "next/image";
 
 export default function Home() {
   return (
