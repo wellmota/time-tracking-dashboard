@@ -30,21 +30,7 @@ export default function SortFilter({ onFilterSelect }) {
       >
         Daily
       </label>
-      <label
-        className="cursor-pointer focus:outline-none peer-checked:text-white hover:text-white"
-        htmlFor="monthly"
-      >
-        <input
-          id="monthly"
-          className="hidden"
-          type="radio"
-          name="filter"
-          value="monthly"
-          checked={selectedFilter === "monthly"}
-          onChange={() => handleFilterSelect("monthly")}
-        />
-        Monthly
-      </label>
+
       <label
         className="cursor-pointer focus:outline-none peer-checked:text-white hover:text-white"
         htmlFor="weekly"
@@ -59,6 +45,21 @@ export default function SortFilter({ onFilterSelect }) {
           onChange={() => handleFilterSelect("weekly")}
         />
         Weekly
+      </label>
+      <label
+        className="cursor-pointer focus:outline-none peer-checked:text-white hover:text-white"
+        htmlFor="monthly"
+      >
+        <input
+          id="monthly"
+          className="hidden"
+          type="radio"
+          name="filter"
+          value="monthly"
+          checked={selectedFilter === "monthly"}
+          onChange={() => handleFilterSelect("monthly")}
+        />
+        Monthly
       </label>
     </div>
   );

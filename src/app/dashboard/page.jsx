@@ -1,9 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Container } from "../components/layout/Container";
-import { Colum } from "../components/layout/Colum";
-import { ProfileCard } from "../components/cards/ProfileCard";
-import { TimeTrackCard } from "../components/cards/TimeTrackCard";
+import { Container } from "@/components/layout/Container";
+import { Colum } from "@/components/layout/Colum";
+import { ProfileCard } from "@/components/cards/ProfileCard";
+import { TimeTrackCard } from "@/components/cards/TimeTrackCard";
 
 export default function Dashboard() {
   const [timeEntries, setTimeEntries] = useState([]);

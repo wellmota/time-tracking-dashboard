@@ -1,4 +1,4 @@
-import Icons from "../../icons/Icons";
+import Icons from "@/components/icons/Icons";
 
 export default function CardCategory({ category }) {
   return (

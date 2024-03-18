@@ -1,8 +1,6 @@
-
-import ProfilePic from "../../../images/image-jeremy.png";
-import Avatar from "../../imagery/Avatar";
-import SortFilter from "../../navigation/SortFilter";
-
+import ProfilePic from "@/images/image-jeremy.png";
+import Avatar from "@/components/imagery/Avatar";
+import SortFilter from "@/components/navigation/SortFilter";
 
 export function ProfileCard({ onFilterSelect }) {
   return (
