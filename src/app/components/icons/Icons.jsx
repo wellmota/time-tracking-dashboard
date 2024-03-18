@@ -7,7 +7,7 @@ import Social from "@/images/icon-social.svg";
 import Study from "@/images/icon-study.svg";
 import Work from "@/images/icon-work.svg";
 
-export default function Icons({ category }) {
+export const Icons = ({ category }) => {
   const iconsList = {
     exercise: Exercise,
     play: Play,
@@ -18,4 +18,4 @@ export default function Icons({ category }) {
   };
   const icon = iconsList[category];
   return <Image src={icon} alt={category} className="self-start mt-[-16px]" />;
-}
+};

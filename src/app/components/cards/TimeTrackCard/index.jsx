@@ -2,7 +2,7 @@ import CardBase from "@/components/cards/layout/CardBase";
 import CardCategory from "@/components/cards/layout/CardCategory";
 import CardContent from "@/components/cards/layout/CardContent";
 import ActionTitle from "@/components/navigation/ActionTitle";
-import { camelCase } from "@/utils/stringUtils";
+import { camelCase } from "../../../../utils/stringUtils";
 
 export const TimeTrackCard = ({ props, filter }) => {
   // Destructure props to extract title and timeframes
@@ -45,9 +45,9 @@ export const TimeTrackCard = ({ props, filter }) => {
       <CardCategory category={category} />
       <CardContent>
         <ActionTitle title={title} />
-        <div>
+        <div className="flex flex-row lg:flex-col justify-between">
           <h2 className="text-5xl font-extralight ">{timeFrame.current}hrs</h2>
-          <p className="text-neutralPaleBlue ">
+          <p className="self-center text-neutralPaleBlue ">
             {label} - {timeFrame.previous}hrs
           </p>
         </div>
