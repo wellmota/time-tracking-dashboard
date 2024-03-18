@@ -5,25 +5,40 @@ import ActionTitle from "../../navigation/ActionTitle";
 import { camelCase } from "../../../utils/stringUtils";
 
 export const TimeTrackCard = ({ props, filter }) => {
+  // Destructure props to extract title and timeframes
   const { title, timeframes } = props;
   const { daily, weekly, monthly } = timeframes;
-  let timeFrame = [];
+
+  // Function to determine filter feedback based on the selected filter
   const filterFeedback = (filter) => {
+    let label = "";
+    let timeFrame = {};
+
+    // Switch to handle different filter cases
     switch (filter) {
       case "daily":
-        return { label: "Yesterday", timeFrame: daily };
+        label = "Yesterday";
+        timeFrame = { current: daily.current, previous: daily.previous };
+        break;
       case "weekly":
-        timeFrame = weekly;
-        return { label: "Lest Week", timeFrame: weekly };
+        label = "Last Week";
+        timeFrame = { current: weekly.current, previous: weekly.previous };
+        break;
       case "monthly":
-        timeFrame = monthly;
-        return { label: "Last Month", timeFrame: monthly };
+        label = "Last Month";
+        timeFrame = { current: monthly.current, previous: monthly.previous };
+        break;
       default:
-        return "";
+        break;
     }
+
+    return { label, timeFrame };
   };
 
+  // Camel case conversion for category
   const category = camelCase(title);
+  
+  const { label, timeFrame } = filterFeedback(filter);
 
   return (
     <CardBase category={category}>
@@ -31,11 +46,9 @@ export const TimeTrackCard = ({ props, filter }) => {
       <CardContent>
         <ActionTitle title={title} />
         <div>
-          <h2 className="text-5xl font-extralight ">
-            {filterFeedback(filter).timeFrame.current}hrs
-          </h2>
+          <h2 className="text-5xl font-extralight ">{timeFrame.current}hrs</h2>
           <p className="text-neutralPaleBlue ">
-            {filterFeedback(filter).label} - {timeFrame.previous}hrs
+            {label} - {timeFrame.previous}hrs
           </p>
         </div>
       </CardContent>
