@@ -14,7 +14,7 @@ export default function SortFilter({ onFilterSelect }) {
   }, [selectedFilter]);
 
   return (
-    <div className="flex flex-row justify-between sm:flex-col text-2xl content px-10  sm:gap-y-5 font-light text-neutralDesaturatedBlue">
+    <div className="flex flex-row justify-between sm:flex-col text-xl content px-10 sm:gap-y-3 font-light text-neutralDesaturatedBlue">
       <input
         id="daily"
         className="hidden"

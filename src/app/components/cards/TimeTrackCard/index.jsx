@@ -47,7 +47,7 @@ export const TimeTrackCard = ({ props, filter }) => {
         <ActionTitle title={title} />
         <div className="flex flex-row lg:flex-col justify-between">
           <h2 className="text-5xl font-extralight ">{timeFrame.current}hrs</h2>
-          <p className="self-center text-neutralPaleBlue ">
+          <p className="self-center md:self-start text-neutralPaleBlue ">
             {label} - {timeFrame.previous}hrs
           </p>
         </div>
