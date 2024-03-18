@@ -7,8 +7,7 @@ import { camelCase } from "../../../utils/stringUtils";
 export const TimeTrackCard = ({ props, filter }) => {
   const { title, timeframes } = props;
   const { daily, weekly, monthly } = timeframes;
-  let timeFrame = [daily, weekly, monthly];
-
+  let timeFrame = [];
   const filterFeedback = (filter) => {
     switch (filter) {
       case "daily":
@@ -32,7 +31,6 @@ export const TimeTrackCard = ({ props, filter }) => {
       <CardContent>
         <ActionTitle title={title} />
         <div>
-          {console.log(timeFrame)}
           <h2 className="text-5xl font-extralight ">
             {filterFeedback(filter).timeFrame.current}hrs
           </h2>
