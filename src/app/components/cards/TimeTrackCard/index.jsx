@@ -7,30 +7,37 @@ import { camelCase } from "../../../utils/stringUtils";
 export const TimeTrackCard = ({ props, filter }) => {
   const { title, timeframes } = props;
   const { daily, weekly, monthly } = timeframes;
+  let timeFrame = [daily, weekly, monthly];
 
-  const filterTextFeedback = (filter) => {
+  const filterFeedback = (filter) => {
     switch (filter) {
       case "daily":
-        return "Yesterday";
+        return { label: "Yesterday", timeFrame: daily };
       case "weekly":
-        return "Last Week";
+        timeFrame = weekly;
+        return { label: "Lest Week", timeFrame: weekly };
       case "monthly":
-        return "Last Month";
+        timeFrame = monthly;
+        return { label: "Last Month", timeFrame: monthly };
       default:
         return "";
     }
   };
 
   const category = camelCase(title);
+
   return (
     <CardBase category={category}>
       <CardCategory category={category} />
       <CardContent>
         <ActionTitle title={title} />
         <div>
-          <h2 className="text-5xl font-extralight ">{daily.current}hrs</h2>
+          {console.log(timeFrame)}
+          <h2 className="text-5xl font-extralight ">
+            {filterFeedback(filter).timeFrame.current}hrs
+          </h2>
           <p className="text-neutralPaleBlue ">
-            {filterTextFeedback(filter)} - {daily.previous}hrs
+            {filterFeedback(filter).label} - {timeFrame.previous}hrs
           </p>
         </div>
       </CardContent>

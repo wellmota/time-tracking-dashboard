@@ -1,5 +1,4 @@
 "use client";
-// Dashboard.jsx
 import { useState, useEffect } from "react";
 import { Container } from "../components/layout/Container";
 import { Colum } from "../components/layout/Colum";
