@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Container } from "@/components/layout/Container";
-import { Colum } from "@/components/layout/Colum";
+import { Column } from "@/components/layout/Column";
 import { ProfileCard } from "@/components/cards/ProfileCard";
 import { TimeTrackCard } from "@/components/cards/TimeTrackCard";
 import { LoadingSpinner } from "@/components/navigation/LoadingSpinner";
