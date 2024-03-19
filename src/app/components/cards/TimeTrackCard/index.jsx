@@ -2,7 +2,7 @@ import CardBase from "@/components/cards/layout/CardBase";
 import CardCategory from "@/components/cards/layout/CardCategory";
 import CardContent from "@/components/cards/layout/CardContent";
 import ActionTitle from "@/components/navigation/ActionTitle";
-import { camelCase } from "../../../../utils/stringUtils";
+import { camelCase } from "@/utils/stringUtils";
 
 export const TimeTrackCard = ({ props, filter }) => {
   // Destructure props to extract title and timeframes

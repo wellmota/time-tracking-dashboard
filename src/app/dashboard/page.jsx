@@ -16,7 +16,9 @@ export default function Dashboard() {
       const response = await fetch("http://localhost:9000/dashboard");
       const data = await response.json();
       setTimeEntries(data);
-      setLoading(false); // Set loading as complete after api fetch
+      setTimeout(() => {
+        setLoading(false); // Set loading delay
+      }, 2000); //
     };
 
     fetchData();
@@ -35,7 +37,7 @@ export default function Dashboard() {
           // show content after loading
           <>
             <ProfileCard onFilterSelect={handleFilterSelect} />
-            <Colum>
+            <Column>
               {timeEntries.map((item, index) => (
                 <TimeTrackCard
                   key={index}
@@ -43,7 +45,7 @@ export default function Dashboard() {
                   filter={selectedFilter}
                 />
               ))}
-            </Colum>
+            </Column>
           </>
         )}
       </Container>

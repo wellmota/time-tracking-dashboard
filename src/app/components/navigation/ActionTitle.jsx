@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Ellipsis from "@/images/icon-ellipsis.svg";
-import { formatTitle } from "../../../utils/stringUtils";
+import { formatTitle } from "@/utils/stringUtils";
 
 export default function ActionTitle({ title }) {
   const headerTitle = formatTitle(title);
