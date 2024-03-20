@@ -1,10 +1,11 @@
+import { useState } from "react";
 import CardBase from "@/components/cards/layout/CardBase";
 import CardCategory from "@/components/cards/layout/CardCategory";
 import CardContent from "@/components/cards/layout/CardContent";
 import ActionTitle from "@/components/navigation/ActionTitle";
 import { camelCase } from "@/utils/stringUtils";
 
-export const TimeTrackCard = ({ props, filter }) => {
+export const TimeTrackCard = ({ props, filter, animationKey }) => {
   // Destructure props to extract title and timeframes
   const { title, timeframes } = props;
   const { daily, weekly, monthly } = timeframes;
@@ -41,11 +42,20 @@ export const TimeTrackCard = ({ props, filter }) => {
       <CardCategory category={camelCase(title)} />
       <CardContent>
         <ActionTitle title={title} />
-        <div className="flex flex-row lg:flex-col justify-between">
-          <h2 className="text-5xl font-extralight transition-opacity duration-500 delay-200 ">
+        <div
+          key={animationKey}
+          className="flex flex-row lg:flex-col justify-between"
+        >
+          <h2
+            key={animationKey}
+            className="text-5xl font-extralight animate-fade-right animate-once animate-delay-100 animate-ease-out "
+          >
             {timeFrame.current}hrs
           </h2>
-          <p className="self-center md:self-start text-neutralPaleBlue transition-opacity duration-500 delay-200">
+          <p
+            key={animationKey}
+            className="self-center md:self-start text-neutralPaleBlue animate-fade animate-once animate-delay-300"
+          >
             {label} - {timeFrame.previous}hrs
           </p>
         </div>

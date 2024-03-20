@@ -10,6 +10,7 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(true);
   const [timeEntries, setTimeEntries] = useState([]);
   const [selectedFilter, setSelectedFilter] = useState("daily");
+  const [animationKey, setAnimationKey] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,6 +27,7 @@ export default function Dashboard() {
 
   const handleFilterSelect = (filter) => {
     setSelectedFilter(filter);
+    setAnimationKey((prevKey) => prevKey + 1);
   };
 
   return (
@@ -43,6 +45,7 @@ export default function Dashboard() {
                   key={index}
                   props={item}
                   filter={selectedFilter}
+                  animationKey={animationKey}
                 />
               ))}
             </Column>
