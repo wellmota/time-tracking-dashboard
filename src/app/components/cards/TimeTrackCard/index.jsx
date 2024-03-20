@@ -16,10 +16,6 @@ export const TimeTrackCard = ({ props, filter }) => {
 
     // Switch to handle different filter cases
     switch (filter) {
-      case "daily":
-        label = "Yesterday";
-        timeFrame = { current: daily.current, previous: daily.previous };
-        break;
       case "weekly":
         label = "Last Week";
         timeFrame = { current: weekly.current, previous: weekly.previous };
@@ -28,21 +24,21 @@ export const TimeTrackCard = ({ props, filter }) => {
         label = "Last Month";
         timeFrame = { current: monthly.current, previous: monthly.previous };
         break;
+      case "daily":
       default:
+        label = "Yesterday";
+        timeFrame = { current: daily.current, previous: daily.previous };
         break;
     }
 
     return { label, timeFrame };
   };
 
-  // Camel case conversion for category
-  const category = camelCase(title);
-
   const { label, timeFrame } = filterFeedback(filter);
 
   return (
-    <CardBase category={category}>
-      <CardCategory category={category} />
+    <CardBase category={camelCase(title)}>
+      <CardCategory category={camelCase(title)} />
       <CardContent>
         <ActionTitle title={title} />
         <div className="flex flex-row lg:flex-col justify-between">
