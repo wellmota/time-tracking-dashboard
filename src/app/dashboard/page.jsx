@@ -6,6 +6,7 @@ import { ProfileCard } from "@/components/cards/ProfileCard";
 import { TimeTrackCard } from "@/components/cards/TimeTrackCard";
 import { LoadingSpinner } from "@/components/navigation/LoadingSpinner";
 
+
 export default function Dashboard() {
   const [loading, setLoading] = useState(true);
   const [timeEntries, setTimeEntries] = useState([]);
