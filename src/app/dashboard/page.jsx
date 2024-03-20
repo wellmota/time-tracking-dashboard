@@ -17,9 +17,7 @@ export default function Dashboard() {
       const response = await fetch("http://localhost:9000/dashboard");
       const data = await response.json();
       setTimeEntries(data);
-      setTimeout(() => {
-        setLoading(false); // Set loading delay
-      }, 3000); //
+      setTimeout(() => {setLoading(false); }, 3000); //
     };
 
     fetchData();

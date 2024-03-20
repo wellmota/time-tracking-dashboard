@@ -1,9 +1,9 @@
-import Image from "next/image";
-import Ellipsis from "@/images/icon-ellipsis.svg";
-import { formatTitle } from "@/utils/stringUtils";
+import Image from "next/image"
+import Ellipsis from "@/images/icon-ellipsis.svg"
+import { formatTitle } from "@/utils/stringUtils"
 
 export default function ActionTitle({ title }) {
-  const headerTitle = formatTitle(title);
+  const headerTitle = formatTitle(title)
   return (
     <div className="flex flex-row justify-between items-center">
       <p>{headerTitle}</p>
@@ -11,5 +11,5 @@ export default function ActionTitle({ title }) {
         <Image src={Ellipsis} alt="More" />
       </button>
     </div>
-  );
+  )
 }

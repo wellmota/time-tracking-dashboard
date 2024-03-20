@@ -12,5 +12,5 @@ export const LoadingSpinner = () => {
         ></div>
       </div>
     </div>
-  );
-};
+  )
+}

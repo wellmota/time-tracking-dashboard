@@ -1,17 +1,15 @@
-"use client";
-import { useState, useEffect } from "react";
+"use client"
+import { useState, useEffect } from "react"
 
 export default function SortFilter({ onFilterSelect }) {
   // Recebe onFilterSelect como prop
-  const [selectedFilter, setSelectedFilter] = useState("daily");
+  const [selectedFilter, setSelectedFilter] = useState("daily")
 
-  const handleFilterSelect = (filter) => {
-    setSelectedFilter(filter);
-  };
+  const handleFilterSelect = (filter) => setSelectedFilter(filter)
 
   useEffect(() => {
-    onFilterSelect(selectedFilter);
-  }, [selectedFilter]);
+    onFilterSelect(selectedFilter)
+  }, [selectedFilter])
 
   return (
     <div className="flex flex-row justify-between sm:flex-col text-xl content px-10 sm:gap-y-3 font-light text-neutralDesaturatedBlue">
@@ -62,5 +60,5 @@ export default function SortFilter({ onFilterSelect }) {
         Monthly
       </label>
     </div>
-  );
+  )
 }

@@ -1,4 +1,4 @@
-import {Icons} from "@/components/icons/Icons";
+import { Icons } from "@/components/icons/Icons"
 
 export default function CardCategory({ category }) {
   return (
@@ -7,5 +7,5 @@ export default function CardCategory({ category }) {
         <Icons category={category} />
       </div>
     </figure>
-  );
+  )
 }

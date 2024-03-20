@@ -1,6 +1,6 @@
-import ProfilePic from "@/images/image-jeremy.png";
-import Avatar from "@/components/imagery/Avatar";
-import SortFilter from "@/components/navigation/SortFilter";
+import ProfilePic from "@/images/image-jeremy.png"
+import Avatar from "@/components/imagery/Avatar"
+import SortFilter from "@/components/navigation/SortFilter"
 
 export function ProfileCard({ onFilterSelect }) {
   return (
@@ -18,5 +18,5 @@ export function ProfileCard({ onFilterSelect }) {
       </div>
       <SortFilter onFilterSelect={onFilterSelect} />
     </div>
-  );
+  )
 }

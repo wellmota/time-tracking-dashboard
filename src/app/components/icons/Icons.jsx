@@ -1,11 +1,11 @@
-import Image from "next/image";
+import Image from "next/image"
 
-import Exercise from "@/images/icon-exercise.svg";
-import Play from "@/images/icon-play.svg";
-import SelfCare from "@/images/icon-self-care.svg";
-import Social from "@/images/icon-social.svg";
-import Study from "@/images/icon-study.svg";
-import Work from "@/images/icon-work.svg";
+import Exercise from "@/images/icon-exercise.svg"
+import Play from "@/images/icon-play.svg"
+import SelfCare from "@/images/icon-self-care.svg"
+import Social from "@/images/icon-social.svg"
+import Study from "@/images/icon-study.svg"
+import Work from "@/images/icon-work.svg"
 
 export const Icons = ({ category }) => {
   const iconsList = {
@@ -15,7 +15,7 @@ export const Icons = ({ category }) => {
     social: Social,
     study: Study,
     work: Work,
-  };
-  const icon = iconsList[category];
-  return <Image src={icon} alt={category} className="self-start mt-[-16px]" />;
-};
+  }
+  const icon = iconsList[category]
+  return <Image src={icon} alt={category} className="self-start mt-[-16px]" />
+}

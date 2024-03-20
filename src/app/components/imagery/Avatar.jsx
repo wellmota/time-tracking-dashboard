@@ -1,5 +1,5 @@
-import Image from "next/image";
-import ProfilePicture from "@/images/image-jeremy.png";
+import Image from "next/image"
+import ProfilePicture from "@/images/image-jeremy.png"
 
 export default function Avatar({ src }) {
   return (
@@ -8,5 +8,5 @@ export default function Avatar({ src }) {
       alt="User Avatar"
       className=" h-20 w-20 rounded-full border-4"
     />
-  );
+  )
 }
