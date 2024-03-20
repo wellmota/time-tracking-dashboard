@@ -1,3 +1,5 @@
+"use client"
+import { useState, useEffect } from "react"
 import CardBase from "@/components/cards/layout/CardBase"
 import CardCategory from "@/components/cards/layout/CardCategory"
 import CardContent from "@/components/cards/layout/CardContent"
@@ -5,6 +7,7 @@ import ActionTitle from "@/components/navigation/ActionTitle"
 import { camelCase } from "@/utils/stringUtils"
 
 export const TimeTrackCard = ({ title, timeframes, filter, animationKey }) => {
+  const [animate, setAnimate] = useState(false)
   // Function to determine filter feedback based on the selected filter
   const filterFeedback = (filter) => {
     const timeInformation = { label: "", timeFrame: {} }
@@ -40,6 +43,10 @@ export const TimeTrackCard = ({ title, timeframes, filter, animationKey }) => {
 
   const { label, timeFrame } = filterFeedback(filter)
 
+  useEffect(() => {
+    setAnimate(true)
+  }, [])
+
   return (
     <CardBase category={camelCase(title)}>
       <CardCategory category={camelCase(title)} />
@@ -49,16 +56,10 @@ export const TimeTrackCard = ({ title, timeframes, filter, animationKey }) => {
           key={animationKey}
           className="flex flex-row lg:flex-col justify-between"
         >
-          <h2
-            key={animationKey}
-            className="text-5xl font-extralight animate-fade-right animate-once animate-delay-100 animate-ease-out"
-          >
+          <h2 className="text-5xl font-extralight animate-fade-right animate-once animate-delay-100 animate-ease-out">
             {timeFrame.current}hrs
           </h2>
-          <p
-            key={animationKey}
-            className="self-center md:self-start text-neutralPaleBlue animate-fade animate-once animate-delay-300"
-          >
+          <p className="self-center md:self-start text-neutralPaleBlue animate-fade animate-once animate-delay-300">
             {label} - {timeFrame.previous}hrs
           </p>
         </div>

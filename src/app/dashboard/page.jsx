@@ -10,16 +10,14 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(true)
   const [timeEntries, setTimeEntries] = useState([])
   const [selectedFilter, setSelectedFilter] = useState("daily")
-  const [animationKey, setAnimationKey] = useState(1)
+  const [animationKey, setAnimationKey] = useState(0)
 
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch("http://localhost:9000/dashboard")
       const data = await response.json()
       setTimeEntries(data)
-      setTimeout(() => {
-        setLoading(false)
-      }, 3000) //
+      setLoading(false)
     }
 
     fetchData()
@@ -34,9 +32,9 @@ export default function Dashboard() {
     <main className="flex min-h-screen flex-col justify-center p-4 md:p-24">
       <Container>
         {loading ? (
-          <LoadingSpinner /> // Show loading while loading state is true
+          <LoadingSpinner /> // Mostrar spinner enquanto carrega
         ) : (
-          // show content after loading
+          // Mostrar conteúdo após o carregamento
           <>
             <ProfileCard onFilterSelect={handleFilterSelect} />
             <Column>
