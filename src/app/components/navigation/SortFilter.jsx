@@ -1,5 +1,6 @@
 "use client"
 import { useState, useEffect } from "react"
+import { RadioLink } from "@/components/inputs/RadioLink"
 
 export default function SortFilter({ onFilterSelect }) {
   // Recebe onFilterSelect como prop
@@ -13,7 +14,7 @@ export default function SortFilter({ onFilterSelect }) {
 
   return (
     <div className="flex flex-row justify-between sm:flex-col text-xl content px-10 sm:gap-y-3 font-light text-neutralDesaturatedBlue">
-      <input
+      <RadioLink
         id="daily"
         className="hidden"
         type="radio"
@@ -21,44 +22,31 @@ export default function SortFilter({ onFilterSelect }) {
         value="daily"
         checked={selectedFilter === "daily"}
         onChange={() => handleFilterSelect("daily")}
-      />
-      <label
-        className="cursor-pointer focus:outline-none checked:text-white hover:text-white"
-        htmlFor="daily"
       >
         Daily
-      </label>
-
-      <label
-        className="cursor-pointer focus:outline-none peer-checked:text-white hover:text-white"
-        htmlFor="weekly"
+      </RadioLink>
+      <RadioLink
+        id="weekly"
+        className="hidden"
+        type="radio"
+        name="filter"
+        value="weekly"
+        checked={selectedFilter === "weekly"}
+        onChange={() => handleFilterSelect("weekly")}
       >
-        <input
-          id="weekly"
-          className="hidden"
-          type="radio"
-          name="filter"
-          value="weekly"
-          checked={selectedFilter === "weekly"}
-          onChange={() => handleFilterSelect("weekly")}
-        />
         Weekly
-      </label>
-      <label
-        className="cursor-pointer focus:outline-none peer-checked:text-white hover:text-white"
-        htmlFor="monthly"
+      </RadioLink>
+      <RadioLink
+        id="Monthly"
+        className="hidden"
+        type="radio"
+        name="filter"
+        value="monthly"
+        checked={selectedFilter === "monthly"}
+        onChange={() => handleFilterSelect("monthly")}
       >
-        <input
-          id="monthly"
-          className="hidden"
-          type="radio"
-          name="filter"
-          value="monthly"
-          checked={selectedFilter === "monthly"}
-          onChange={() => handleFilterSelect("monthly")}
-        />
         Monthly
-      </label>
+      </RadioLink>
     </div>
   )
 }
