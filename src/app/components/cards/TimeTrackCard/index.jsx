@@ -7,36 +7,35 @@ import { camelCase } from "@/utils/stringUtils";
 export const TimeTrackCard = ({ title, timeframes, filter, animationKey }) => {
   // Function to determine filter feedback based on the selected filter
   const filterFeedback = (filter) => {
-    let label = "";
-    let timeFrame = {};
+    const timeInformation = { label: "", timeFrame: {} };
 
     // Switch to handle different filter cases
     switch (filter) {
       case "weekly":
-        label = "Last Week";
-        timeFrame = {
+        timeInformation.label = "Last Week";
+        timeInformation.timeFrame = {
           current: timeframes.weekly.current,
-          previous: weekly.previous,
+          previous: timeframes.weekly.previous,
         };
         break;
       case "monthly":
-        label = "Last Month";
-        timeFrame = {
+        timeInformation.label = "Last Month";
+        timeInformation.timeFrame = {
           current: timeframes.monthly.current,
           previous: timeframes.monthly.previous,
         };
         break;
       case "daily":
       default:
-        label = "Yesterday";
-        timeFrame = {
+        timeInformation.label = "Yesterday";
+        timeInformation.timeFrame = {
           current: timeframes.daily.current,
           previous: timeframes.daily.previous,
         };
         break;
     }
 
-    return { label, timeFrame };
+    return timeInformation;
   };
 
   const { label, timeFrame } = filterFeedback(filter);
@@ -52,7 +51,7 @@ export const TimeTrackCard = ({ title, timeframes, filter, animationKey }) => {
         >
           <h2
             key={animationKey}
-            className="text-5xl font-extralight animate-fade-right animate-once animate-delay-100 animate-ease-out "
+            className="text-5xl font-extralight animate-fade-right animate-once animate-delay-100 animate-ease-out"
           >
             {timeFrame.current}hrs
           </h2>
