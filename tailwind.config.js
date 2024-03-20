@@ -35,7 +35,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animated")],
 
   safelist: [
     "bg-study",

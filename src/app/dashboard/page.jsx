@@ -7,7 +7,7 @@ import { TimeTrackCard } from "@/components/cards/TimeTrackCard";
 import { LoadingSpinner } from "@/components/navigation/LoadingSpinner";
 
 export default function Dashboard() {
-  const [loading, setLoading] = useState(true); // State for loading
+  const [loading, setLoading] = useState(true);
   const [timeEntries, setTimeEntries] = useState([]);
   const [selectedFilter, setSelectedFilter] = useState("daily");
 
@@ -18,7 +18,7 @@ export default function Dashboard() {
       setTimeEntries(data);
       setTimeout(() => {
         setLoading(false); // Set loading delay
-      }, 2000); //
+      }, 3000); //
     };
 
     fetchData();
