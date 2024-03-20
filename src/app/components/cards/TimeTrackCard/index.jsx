@@ -1,15 +1,10 @@
-import { useState } from "react";
 import CardBase from "@/components/cards/layout/CardBase";
 import CardCategory from "@/components/cards/layout/CardCategory";
 import CardContent from "@/components/cards/layout/CardContent";
 import ActionTitle from "@/components/navigation/ActionTitle";
 import { camelCase } from "@/utils/stringUtils";
 
-export const TimeTrackCard = ({ props, filter, animationKey }) => {
-  // Destructure props to extract title and timeframes
-  const { title, timeframes } = props;
-  const { daily, weekly, monthly } = timeframes;
-
+export const TimeTrackCard = ({ title, timeframes, filter, animationKey }) => {
   // Function to determine filter feedback based on the selected filter
   const filterFeedback = (filter) => {
     let label = "";
@@ -19,16 +14,25 @@ export const TimeTrackCard = ({ props, filter, animationKey }) => {
     switch (filter) {
       case "weekly":
         label = "Last Week";
-        timeFrame = { current: weekly.current, previous: weekly.previous };
+        timeFrame = {
+          current: timeframes.weekly.current,
+          previous: weekly.previous,
+        };
         break;
       case "monthly":
         label = "Last Month";
-        timeFrame = { current: monthly.current, previous: monthly.previous };
+        timeFrame = {
+          current: timeframes.monthly.current,
+          previous: timeframes.monthly.previous,
+        };
         break;
       case "daily":
       default:
         label = "Yesterday";
-        timeFrame = { current: daily.current, previous: daily.previous };
+        timeFrame = {
+          current: timeframes.daily.current,
+          previous: timeframes.daily.previous,
+        };
         break;
     }
 

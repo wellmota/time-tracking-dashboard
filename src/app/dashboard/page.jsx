@@ -43,7 +43,8 @@ export default function Dashboard() {
               {timeEntries.map((item, index) => (
                 <TimeTrackCard
                   key={index}
-                  props={item}
+                  title={item.title}
+                  timeframes={item.timeframes}
                   filter={selectedFilter}
                   animationKey={animationKey}
                 />
