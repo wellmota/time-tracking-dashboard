@@ -10,7 +10,7 @@ export default function SortFilter({ onFilterSelect }) {
   };
 
   useEffect(() => {
-    onFilterSelect(selectedFilter); // Chama a função de retorno de chamada quando o filtro é selecionado
+    onFilterSelect(selectedFilter);
   }, [selectedFilter]);
 
   return (
