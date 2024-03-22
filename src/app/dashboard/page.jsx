@@ -11,7 +11,7 @@ export default function Dashboard() {
   const [selectedFilter, setSelectedFilter] = useState("daily")
   const [animationKey, setAnimationKey] = useState(0)
 
-  const { data: timeEntries, isFetching } = useFetch("/dashboard")
+  const { data: timeEntries, isFetching } = useFetch("dashboard")
 
   const handleFilterSelect = (filter) => {
     setSelectedFilter(filter)
