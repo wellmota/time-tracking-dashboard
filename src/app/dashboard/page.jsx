@@ -1,17 +1,24 @@
 "use client"
 import { useState } from "react"
-import { useFetch } from "@/hooks/useFetch"
+import axios from "axios"
 import { Container } from "@/components/layout/Container"
 import { Column } from "@/components/layout/Column"
 import { ProfileCard } from "@/components/cards/ProfileCard"
 import { TimeTrackCard } from "@/components/cards/TimeTrackCard"
 import { LoadingSpinner } from "@/components/navigation/LoadingSpinner"
+import { useQuery } from "@tanstack/react-query"
 
 export default function Dashboard() {
+  const { data: timeEntries, isFetching } = useQuery({
+    queryKey: ["timeEntries"],
+    queryFn: async () => {
+      const response = await axios.get("http://localhost:9000/dashboard")
+      return response.data
+    },
+  })
+
   const [selectedFilter, setSelectedFilter] = useState("daily")
   const [animationKey, setAnimationKey] = useState(0)
-
-  const { data: timeEntries, isFetching } = useFetch("dashboard")
 
   const handleFilterSelect = (filter) => {
     setSelectedFilter(filter)
