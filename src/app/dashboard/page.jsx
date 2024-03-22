@@ -1,4 +1,5 @@
 "use client"
+import axios from "axios"
 import { useState, useEffect } from "react"
 import { Container } from "@/components/layout/Container"
 import { Column } from "@/components/layout/Column"
@@ -13,15 +14,12 @@ export default function Dashboard() {
   const [animationKey, setAnimationKey] = useState(0)
 
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch("http://localhost:9000/dashboard")
-      const data = await response.json()
-      setTimeEntries(data)
+    axios.get("http://localhost:9000/dashboard").then((response) => {
+      setTimeEntries(response.data)
       setLoading(false)
-    }
-
-    fetchData()
+    })
   }, [])
+
 
   const handleFilterSelect = (filter) => {
     setSelectedFilter(filter)

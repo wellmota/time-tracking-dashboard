@@ -6,7 +6,7 @@ export default function Avatar({ src }) {
     <Image
       src={src ? src : ProfilePicture}
       alt="User Avatar"
-      className=" h-20 w-20 rounded-full border-4"
+      className="h-20 w-20 rounded-full border-4"
     />
   )
 }
