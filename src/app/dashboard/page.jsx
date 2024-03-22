@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { useFetch } from "@/hooks/useFetch"
 import { Container } from "@/components/layout/Container"
 import { Column } from "@/components/layout/Column"
@@ -11,9 +11,7 @@ export default function Dashboard() {
   const [selectedFilter, setSelectedFilter] = useState("daily")
   const [animationKey, setAnimationKey] = useState(0)
 
-  const { data: timeEntries, isFetching } = useFetch(
-    "http://localhost:9000/dashboard"
-  )
+  const { data: timeEntries, isFetching } = useFetch("/dashboard")
 
   const handleFilterSelect = (filter) => {
     setSelectedFilter(filter)
