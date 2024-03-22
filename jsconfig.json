@@ -6,7 +6,10 @@
       "@/styles/*": ["styles/*"],
       "@/components/*": ["components/*"],
       "@/images/*": ["images/*"],
-      "@/utils/*": ["utils/*"]
-    }
+      "@/utils/*": ["utils/*"],
+      "@/hooks/*": ["hooks/*"]
+    },
+    "module": "ES6",
+    "jsx": "preserve"
   }
 }

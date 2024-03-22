@@ -1,6 +1,6 @@
 "use client"
-import axios from "axios"
 import { useState, useEffect } from "react"
+import { useFetch } from "@/hooks/useFetch"
 import { Container } from "@/components/layout/Container"
 import { Column } from "@/components/layout/Column"
 import { ProfileCard } from "@/components/cards/ProfileCard"
@@ -8,18 +8,12 @@ import { TimeTrackCard } from "@/components/cards/TimeTrackCard"
 import { LoadingSpinner } from "@/components/navigation/LoadingSpinner"
 
 export default function Dashboard() {
-  const [loading, setLoading] = useState(true)
-  const [timeEntries, setTimeEntries] = useState([])
   const [selectedFilter, setSelectedFilter] = useState("daily")
   const [animationKey, setAnimationKey] = useState(0)
 
-  useEffect(() => {
-    axios.get("http://localhost:9000/dashboard").then((response) => {
-      setTimeEntries(response.data)
-      setLoading(false)
-    })
-  }, [])
-
+  const { data: timeEntries, isFetching } = useFetch(
+    "http://localhost:9000/dashboard"
+  )
 
   const handleFilterSelect = (filter) => {
     setSelectedFilter(filter)
@@ -29,10 +23,10 @@ export default function Dashboard() {
   return (
     <main className="flex min-h-screen flex-col justify-center p-4 md:p-24">
       <Container>
-        {loading ? (
-          <LoadingSpinner /> // Mostrar spinner enquanto carrega
+        {isFetching ? (
+          <LoadingSpinner /> // Show spinner Loading
         ) : (
-          // Mostrar conteúdo após o carregamento
+          // Show content
           <>
             <ProfileCard onFilterSelect={handleFilterSelect} />
             <Column>
