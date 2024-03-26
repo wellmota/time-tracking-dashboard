@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react"
+import { useState, useCallback } from "react"
 import axios from "axios"
 import { Container } from "@/components/layout/Container"
 import { Column } from "@/components/layout/Column"
@@ -20,10 +20,13 @@ export default function Dashboard() {
   const [selectedFilter, setSelectedFilter] = useState("daily")
   const [animationKey, setAnimationKey] = useState(0)
 
-  const handleFilterSelect = (filter) => {
-    setSelectedFilter(filter)
-    setAnimationKey((prevKey) => prevKey + 1)
-  }
+  const handleFilterSelect = useCallback(
+    (filter) => {
+      setSelectedFilter(filter)
+      setAnimationKey((prevKey) => prevKey + 1)
+    },
+    [setSelectedFilter, setAnimationKey]
+  )
 
   return (
     <main className="flex min-h-screen flex-col justify-center p-4 md:p-24">
