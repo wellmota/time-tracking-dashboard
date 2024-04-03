@@ -44,6 +44,5 @@ module.exports = {
     "bg-social",
     "bg-selfCare",
     "bg-work",
-    ":root",
   ],
-};
+}

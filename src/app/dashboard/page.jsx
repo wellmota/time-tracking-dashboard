@@ -1,18 +1,18 @@
 "use client"
-import { useState, useCallback } from "react"
-import axios from "axios"
-import { Container } from "@/components/layout/Container"
-import { Column } from "@/components/layout/Column"
 import { ProfileCard } from "@/components/cards/ProfileCard"
 import { TimeTrackCard } from "@/components/cards/TimeTrackCard"
+import { Column } from "@/components/layout/Column"
+import { Container } from "@/components/layout/Container"
 import { LoadingSpinner } from "@/components/navigation/LoadingSpinner"
+import { useFetch } from "@/hooks/useFetch"
 import { useQuery } from "@tanstack/react-query"
+import { useCallback, useState } from "react"
 
 export default function Dashboard() {
   const { data: timeEntries, isFetching } = useQuery({
     queryKey: ["timeEntries"],
     queryFn: async () => {
-      const response = await axios.get("http://localhost:9000/dashboard")
+      const response = await useFetch("http://localhost:9000/dashboard")
       return response.data
     },
   })
