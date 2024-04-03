@@ -1,9 +1,6 @@
 import axios from "axios"
 
-const api = axios.create({
-  baseURL: "http://localhost:9000",
-})
-
 export function useFetch(url) {
-  return api.get(url)
+  const baseURL = process.env.NEXT_PUBLIC_API_URL
+  return axios.get(baseURL + url)
 }
