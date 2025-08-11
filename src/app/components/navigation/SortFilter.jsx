@@ -10,7 +10,7 @@ export default function SortFilter({ onFilterSelect }) {
 
   useEffect(() => {
     onFilterSelect(selectedFilter)
-  }, [selectedFilter])
+  }, [selectedFilter, onFilterSelect])
 
   return (
     <div className="flex flex-row justify-between sm:flex-col text-xl content px-10 sm:gap-y-3 font-light text-neutralDesaturatedBlue">

@@ -5,8 +5,8 @@ import { TimeTrackCard } from '@/components/cards/TimeTrackCard'
 import { Column } from '@/components/layout/Column'
 import { Container } from '@/components/layout/Container'
 import { LoadingSpinner } from '@/components/navigation/LoadingSpinner'
-import { useFetch } from '@/hooks/useFetch'
 import { useQuery } from '@tanstack/react-query'
+import axios from 'axios'
 
 import { useCallback, useState } from 'react'
 
@@ -18,7 +18,7 @@ export default function Dashboard() {
   } = useQuery({
     queryKey: ['timeEntries'],
     queryFn: async () => {
-      const response = await useFetch('/api/dashboard')
+      const response = await axios.get('/api/dashboard')
       return response.data
     },
   })

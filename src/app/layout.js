@@ -2,7 +2,7 @@ import { Rubik } from "next/font/google"
 import "./globals.css"
 import "./theme/customTheme.css"
 import { QueryClientProvider } from "@tanstack/react-query"
-import { queryClient } from "@/utils/queryClient"
+import { queryClient } from "@/utils/queryclient"
 
 const rubik = Rubik({ subsets: ["latin"] })
 
